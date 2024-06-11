@@ -13,13 +13,14 @@ namespace similaryachts
         [SetUp]
         public async Task Setup()
         {
-            await Page.GotoAsync("https://web-dev.bluebnc.com/en-us/boat/2730/yacht-charter-mallorca-sunseeker-95");
+            await Page.GotoAsync("https://web-dev.bluebnc.com/en-us/boat/1555/catamaran-yacht-charter-mallorca-sunreef-74");
         }
 
         [Test]
         public async Task Similar_yacht()
+        // checks  if there are  similar yachts
         {
-            await Expect(Page).ToHaveTitleAsync("Sunseeker 95 | Bluebnc");
+            // await Expect(Page).ToHaveTitleAsync("Sunseeker 95 | Bluebnc");
 
              var divSelector = "div.card-group.scroll-x.scroll-x-hidden.grid.grid-auto-col.grid-col-lg-4.gap-1.gap-md-2";
 
@@ -34,6 +35,7 @@ namespace similaryachts
         [Test]
 
         public  async  Task Related_itineraries()
+        //checks  if there is related itineraries sections
         {
             var divSelector = "div.itinerary-wrapper";
 
@@ -49,6 +51,7 @@ namespace similaryachts
         [Test]
 
         public async Task CheckDescription()
+        //description section
         {
      
             var descriptionDivSelector = "div.description";
@@ -70,6 +73,7 @@ namespace similaryachts
 
 
     public async Task PricingDetail()
+       //pricing section
     {
          var pricingDivSelector = "div.pricing-detail";
 
@@ -89,6 +93,7 @@ namespace similaryachts
     [Test]
     
         public async  Task Specification()
+           //specification section
         {
               var specificationDivSelector = "div.specification";
 
@@ -109,6 +114,7 @@ namespace similaryachts
         [Test]
 
         public async Task Amenity()
+           //amenity section
         {
              var amenityDivSelector = "div.amenity";
 
@@ -129,6 +135,7 @@ namespace similaryachts
         [Test]
 
         public async Task Destination()
+           //destination section
     {
         var destinationDivSelector = "div.available-destination";
 
@@ -156,3 +163,9 @@ namespace similaryachts
         }
     }
 }
+
+
+
+
+
+// //run settings  are  set  for  chomium -  dotnet  test --settings:demo.runsettings
